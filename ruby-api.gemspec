@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A sinatra server}
   spec.description   = %q{
-                        This gem describe a sinatra server to expose an API in JSON and XML 
+                        This gem describes a sinatra server to expose an API in JSON and XML 
                         (parameter to be assigned) and return the results of a Google search action
                       }
   spec.homepage      = "https://github.com/tavaresc/ruby-api"
