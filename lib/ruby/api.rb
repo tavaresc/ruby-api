@@ -18,7 +18,7 @@ end
 # end
 
 
-get '/search/:word', :provides => [:json, :xml] do |keyword|
+get '/search/:word' do |keyword|
 	uri = URI.parse(URI.encode("http://www.google.com/search?q=#{keyword}"))
 	#url = URI("http://www.googleapis.com/customsearch/v1?key=AIzaSyApBGCqcbAHYMyeqFY9ZEGIfJFgRgN-5us&cx=008044896334911258708:ccwdhgnhqge&q=#{keyword}")
 	#uri = URI.parse(URI.encode("http://api.giphy.com/v1/gifs/search?q=#{keyword}&api_key=dc6zaTOxFJmzC"))
