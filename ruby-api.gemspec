@@ -29,7 +29,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
 
-  spec.add_dependency "google-api-client", "~> 0.29"
+  #spec.add_dependency "google-api-client", "~> 0.29"
+  spec.add_dependency "nokogiri", "~> 1.10"
   spec.add_dependency "sinatra", "~> 2.0"
 
 end

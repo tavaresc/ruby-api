@@ -1,8 +1,12 @@
 require_relative "api/version"
+require_relative "api/utils"
+
 require "google/apis/customsearch_v1"
 require "net/http"
 require "json"
 require "sinatra"
+
+include Utils
 
 get '/' do
 	'Hello world'
@@ -19,6 +23,7 @@ end
 
 
 get '/search/:word' do |keyword|
+
 	uri = URI.parse(URI.encode("http://www.google.com/search?q=#{keyword}"))
 	#url = URI("http://www.googleapis.com/customsearch/v1?key=AIzaSyApBGCqcbAHYMyeqFY9ZEGIfJFgRgN-5us&cx=008044896334911258708:ccwdhgnhqge&q=#{keyword}")
 	#uri = URI.parse(URI.encode("http://api.giphy.com/v1/gifs/search?q=#{keyword}&api_key=dc6zaTOxFJmzC"))
@@ -31,12 +36,14 @@ get '/search/:word' do |keyword|
  #    end
  #  end
 
-	api_response = Net::HTTP.get(uri)
+	#api_response = Net::HTTP.get(uri)
 	#JSON.parse(api_response)
-	api_response
+	#p api_response.class.name
+
+	#api_response
 
 	#api_response_hash = Hash.from_xml(api_reponse).to_json
-
+	extract_links
 end
 
 module Ruby
