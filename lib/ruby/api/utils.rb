@@ -10,20 +10,17 @@ module Utils
 
 		uri = "http://www.google.com/search?q=capybara"
 		html_doc = Nokogiri::HTML(open(uri))
-		index = 0
 
-		hash_result = Hash.new
+		result_list = []
 		results = html_doc.xpath("//div[@id='ires']/ol/div/h3")
 
-		byebug
+		#byebug
 
 		results.each do |res|
-			hash_result << { "href" => res.xpath("//a/@href"), "description" => res.xpath("//span").text }
+			result_list.push({ "href" => res.xpath("./a/@href").text, "description" => res.xpath("../div[@class='s']/span").text })
 		end
 
-		#p "hello"
-		p hash_result
-		#results.each { |r| p r }
+		p result_list
 	end
 
 end
