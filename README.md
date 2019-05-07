@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run teh sinatar application with all its context:
+
+	$ ruby -I lib lib/ruby/api.rb
 
 ## Development
 
